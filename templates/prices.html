@@ -1,0 +1,54 @@
+{% load static %}
+
+  	<section>
+  		<div class="container">
+  			<h1 class="text-3">ПАКЕТЫ УСЛУГ</h1>
+  			<div class="row justify-content-center">
+  				<div class="card product_card" style="width: 18rem; background-color: #cd7f32;">
+				  <div class="card-body">
+				    <h5 class="card-title">{{ cp1.cp_description }}</h5>
+				    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+				    <h3>{{ cp1 }} $</h3>
+				  </div>
+				</div>
+				<div class="card product_card" style="width: 18rem; background-color: #c0c0c0;">
+				  <div class="card-body">
+				    <h5 class="card-title">{{ cp2.cp_description }}</h5>
+				    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+				    <h3>{{ cp2 }} $</h3>
+				  </div>
+				</div>
+				<div class="card product_card" style="width: 18rem; background-color: #ffd700;">
+				  <div class="card-body">
+				    <h5 class="card-title">{{ cp3.cp_description }}</h5>
+				    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+				    <h3>{{ cp3 }} $</h3>
+				  </div>
+				</div>
+  			</div>
+  		</div>
+  	</section>
+
+  	<section>
+  		<div class="container">
+  			<h1 class="text-3">Цены на услуги</h1>
+  			<table class="table table_one">
+			  <thead class="thead-dark">
+			    <tr>
+			      <th scope="col">Услуга</th>
+			      <th scope="col">Старая цена</th>
+			      <th scope="col">Новая цена</th>
+			    </tr>
+			  </thead>
+			  <tbody>
+			  {%for pr in table_prices %}
+			    <tr>
+			      <td>{{ pr.tp_name }}</td>
+			      <td><del>{{ pr.tp_old_price }}</del></td>
+			      <td>{{ pr.tp_new_price }}</td>
+			    </tr>
+			  {%endfor%}
+			  </tbody>
+			</table>
+  		</div>
+  	</section>
